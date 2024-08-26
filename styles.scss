@@ -1,0 +1,41 @@
+@use 'anidacion';
+
+// Variables
+
+$color-principal: #ccc;
+$color-letra: blue;
+
+body {
+    background: $color-principal;
+}
+
+h1 {
+    color: $color-letra;
+}
+
+p {
+    color: $color-letra;
+}
+
+// Mixins
+@mixin caja_personalizada($fondo: white){
+    background-color: $fondo;
+    border: 4px solid black;
+    box-shadow: 0 0 2px black;
+    color: $color-letra;
+    margin: 20px;
+}
+
+.caja {
+    @include caja_personalizada($fondo: beige);
+}
+
+.caja-secundaria {
+    @include caja_personalizada($fondo: lightblue);
+}
+
+// Operadores
+
+.caja, .caja-secundaria {
+    width: 400px + 200px;
+}
